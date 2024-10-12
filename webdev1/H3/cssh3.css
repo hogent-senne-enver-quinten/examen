@@ -1,0 +1,9 @@
+/* Zorgt dat er een border rond de cellen is. */
+td, th {
+	border: #000000 solid 1px;
+}
+
+/* Zorgt dat er maar één lijn rondom de cellen is. */
+table {
+	border-collapse: collapse;
+}

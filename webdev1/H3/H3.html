@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3</title>
+    <link rel="stylesheet" href="cssh3.css">
+</head>
+
+<body>
+    <!-- tabel -->
+    <table>
+        <!-- Tabel caption -->
+        <caption>Shopping Cart</caption>
+
+        <!-- Tabel head -->
+        <thead>
+            <tr>
+                <!-- headers -->
+                <th>Item 1</th>
+                <th>Availability</th>
+                <th>Qty</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <!-- Tabel body -->
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+
+                <!-- rowspan -->
+                <td rowspan="2">In Stock</td>
+                <td>1</td>
+                <td>1€</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>2</td>
+                <td>2€</td>
+            </tr>
+            <tr>
+                <td>Item 3</td>
+
+                <!-- colspan -->
+                <td colspan="3">Out of Stock</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- colspan -->
+                <td colspan="2">Total</td>
+                <td>3</td>
+                <td>3€</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Formulier -->
+    <form action="mailto:janclaes@hogent.be?subject=TestFormulier" method="get">
+        <!-- fieldset -->
+        <fieldset>
+            <!-- legend -->
+            <legend>Test Formulier</legend>
+            
+            <!--Geef gewone tekst in-->
+            <label for="naam">Naam</label>
+            <input id="naam" name="naam" type="text" placeholder="Naam" required>
+            <br>
+
+            <!--Geef een email in-->
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email" required>
+            <br>
+
+            <!--Geef een wachtwoord in-->
+            <label for="wachtwoord">Wachtwoord</label>
+            <input id="wachtwoord" name="wachtwoord" type="password" placeholder="Wachtwoord" required>
+            <br>
+
+            <!--Geef een cijfer in-->
+            <label for="aantal">Aantal</label>
+            <input id="aantal" name="aantal" type="number" placeholder="1" min="1" max="10">
+            <br>
+
+            <!--Geef een datum in-->
+            <label for="datum">Aantal</label>
+            <input id="datum" name="datum" type="date" required>
+            <br>
+
+            <!--Kies uit een slectie-->
+            <label for="selectie">selectie</label>
+            <select name="selectie" id="selectie">
+                <option value="item1">Item 1</option>
+                <option value="item2">Item 2</option>
+            </select>
+            <br>
+            
+            <!--Kies of geef zelf een berzorger in-->
+            <label for="berzorger">Aantal</label>
+            <input list="berzorgers" id="bezorger">
+            <datalist id="berzorgers">
+                <option value="alice" name="alice">Alice</option>
+                <option value="bob" name="alice">Bob</option>
+            </datalist>	
+            <br>
+            
+            <!-- kies de volgende optie's -->	
+            <label for="checkbox1">checkbox1</label>
+            <input type="checkbox" name="checkbox1" id="checkbox1" checked>	
+            <label for="checkbox2">checkbox2</label>
+            <input type="checkbox" name="checkbox2" id="checkbox2">	
+            <br>
+
+            <!-- kies de volgende optie's -->	
+            <label for="radio1">radio1</label>
+            <input type="radio" name="radio-groep" id="radio1" value="radio1" checked>
+            <label for="radio2">radio2</label>
+            <input type="radio" name="radio-groep" id="radio2" value="radio2">		
+            <br>
+
+            <!-- Geef meerdere lijnen tekst in -->	
+            <label for="tekstarea">tekstarea</label>
+            <input type="textarea" id="tekstarea" value="tekst">
+            <br>
+
+            <!-- Formulier controls -->		
+            <input type="submit" value="Dien formulier in"></input>
+            <br>
+            <input type="reset" value="reset het formulier"></input>
+            <br>
+        </fieldset>
+    </form>    
+</body>
+
+</html>
