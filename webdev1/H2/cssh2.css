@@ -1,0 +1,4 @@
+/* elk inline a element in p zal een rode tekst worden */
+p a {
+    color: red;
+}
