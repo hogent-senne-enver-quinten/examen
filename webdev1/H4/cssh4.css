@@ -1,0 +1,163 @@
+/* geeft het element met deze klasse een rode tekst */
+.stijl1 {
+    color: red;
+}
+
+/* verwijder een onderlijn van een element met deze klasse */
+.geen-onderlijn {
+    text-decoration: none;
+}
+
+/* zet elke letter met de klasse in hoofdletters */
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* geeft en elk element de volgende fonts */
+* {
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* selecteerd elk paragraaf element */
+p {
+    color: black;
+}
+
+/* elk element met klasse test krijgt een kleur brown */
+.test {
+	color: brown;
+}
+
+/* elk element met identifier test2 krijgt een kleur blueviolet */
+#test2 {
+    color: blueviolet;
+}
+
+/* zowel h1 en h2 krijgen een kleur coral */
+h1, h2 {
+    color: coral;
+}
+
+/* elke paragraaf in een element met identifier test3 krijgt een zwarte achtergrond en witte tekst */
+#test3 p {
+	background-color: black;
+    color: white;
+}
+
+/* elke paragraaf die rechtstreeks in het element met identifier test4 zit krijgt een achtergrond #212121 en een witte tekst */
+#test4 > p {
+	background-color: #212121;
+    color: white;
+}
+
+/* Het 2de element li krijgt een rode kleur omdat we het eerste element (first of type) gebruiken en de + betekent het volgende element li die zal de kleur rood krijgen */
+#test5 li:first-of-type + li {
+    color: red;
+}
+
+/* Het ~ teken kijkt in welk element het ander element zich bevind en geeft het element span een rode kleur */
+/* DUIDELIJKER het p element zit in een element met identifier test6 en elk span element die ook in datzelfde element bevindt krijgt een rode kleur */
+#test6 p ~ span {
+    color: red;
+}
+
+/* elke input met type reset die in een element met identifier test7 zit krijgt een rode kleur */
+#test7 input[type="reset"] {
+	color: red;	
+}
+
+/* Geef elke link met de identifier test8 die al gebruikt is blauw */
+#test8:visited  {
+	color: blue;
+}
+
+/* Geef elke link met de identifier test8 die nog niet gebruikt is groen */
+#test8:not(:visited) {
+	color: green;
+}
+
+/* Als de checkbox is aangekruist dan krijgt de label een groene kleur */
+
+#test9:checked + label {
+	color: green;	
+}
+
+/* of */
+
+#test9:checked[type="checkbox"] + label {
+	color: green;	
+}
+
+/* Geef het 5de li element in de lijst een kleur */
+#test10 li:nth-of-type(5)
+{
+	color: red;	
+}
+
+/* Geef het elk oneven li element in de lijst een kleur */
+#test11 li:nth-of-type(odd)
+{
+	color: red;	
+}
+
+/* Geef elk even li element in de lijst een kleur */
+#test12 li:nth-of-type(even)
+{
+	color: blue;	
+}
+
+/* zet de tekst van het label naar 👌 via CSS als de checkbox is aangekruist */
+#test13:checked[type="checkbox"] + label::after {
+	content: "👌";
+}
+
+/* zet de eerste letter van de paragraaf groot */
+#test14::first-letter {
+	font-size: 4em;
+}
+
+#test15, #test16, #test17, #test18 {
+    background: black;
+}
+
+/* r is rood 0-255 g is groen 0-255 b is blauw 0-255 */
+#test15 {
+	color: rgb(255, 255, 255);
+}
+
+/* a is alfa is transparantie 0-1 */
+#test16 {
+	color: rgba(255, 255, 255, 1);
+}
+
+/* h is kleur 0-255 s is saturatie is % en l is licht is %*/
+#test17 {
+	color: hsl(255, 100%, 100%);
+}
+
+/* 6 hexadecimale bits zijn voor de kleur de 2 laatste zijn voor de transparantie */
+#test18 {
+    color: #ffffffff;
+}
+
+#test19, #test20 {
+    width: 400px;
+    height: 200px;
+}
+
+#test19 {
+	/* kleur kan bevoorbeeld rgb of hsl zijn */
+	background-image: linear-gradient(#ffffff, #000000);
+}
+
+#test20 {
+  /* zet de foto als achtergrond van de body */
+	background-image: url('../H2/img/bmw.jpg');
+	/* of */
+	background: url('../H2/img/bmw.jpg');
+	
+	background-position: center; /* zet de afbeelding in het midden */
+	background-repeat: no-repeat; /* de afbeelding niet herhalen */
+	background-size: 50%; /* 50% van de originele grootte */
+    background-attachment: scroll; /* gaat mee t.o.v. venster */
+}

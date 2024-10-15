@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H4</title>
+    <link rel="stylesheet" href="cssh4.css">
+</head>
+<style>
+    .stijl2 {
+        color: green;
+    }
+</style>
+<body>
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    
+    <!-- paragraaf met klasse stijl1 -->
+    <p class="stijl1">Dit is de paragraaf met klasse stijl1 die gebruik maakt van een CSS bestand</p>
+
+    <!-- paragraaf met klasse stijl2 -->
+    <p class="stijl2">Dit is de paragraaf met klasse stijl2 die gebruik maakt van een style element</p>
+    
+    <!-- paragraaf met style attribuut -->
+    <p style="color: blue;">Dit is de paragraaf die gebruikt maakt van het style attribuut</p>
+
+    <!-- link zonder onderlijn -->
+    <a class="geen-onderlijn" href="https://hogent.be">Dit is een link zonder onderlijn</a>
+    
+    <!-- paragraaf waar alle letters hoofdletters zijn -->
+    <p class="uppercase">Dit is een paragraaf die via CSS uppercase is geworden</p>
+    
+    <!-- paragraaf met klasse test -->
+    <p class="test">Deze paragraaf met de klasse test heeft als kleur brown</p>
+    
+    <!-- paragraaf met identifier test2 -->
+    <p id="test2">Deze paragraaf met identifier test2 heeft als kleur blueviolet</p>
+
+    <!-- #test3 p -->
+    <div id="test3">
+        <p>paragraaf in div met identifier test3</p>
+        <div>
+            <p>paragraaf in een div</p>
+        </div>
+    </div>
+
+    <!-- #test4 > p -->
+    <div id="test4">
+        <p>paragraaf in div met identifier test3</p>
+        <div>
+            <p>paragraaf in een div</p>
+        </div>
+    </div>
+
+    <!-- #test5 li:first-of-type + li -->
+    <ul id="test5">
+        <li>One</li>
+        <li>Two!</li>
+        <li>Three</li>
+    </ul>
+
+    <!-- p ~ span -->
+    <div id="test6">
+        <p>Here is a paragraph.</p>
+        <code>Here is some code.</code>
+        <span>
+          This span is red because it appears after the paragraph, even though there
+          are other nodes in between.
+        </span>
+    </div>
+
+    <!-- #test7 input[type="reset"] -->
+    <form id="test7">
+        <fieldset>
+            <legend>Test Formulier</legend>
+
+            <input type="reset" value="reset het formulier"></input>
+        </fieldset>          
+    </form>
+
+    <!-- Pseudo klassen -->
+    <h1>Pseudo klassen</h1>
+
+    <!-- a:visited -->
+    <a id="test8" href="https://hogent.be">link naar hogent.be</a>
+    <br>
+    <a id="test8" href="https://dramigo.be">link naat dramigo.be</a>
+    <br>
+    <br>
+
+    <!-- label kleurt groen als de checkbox is aangekruist -->
+    <input type="checkbox" name="test9" id="test9" checked>
+    <label for="test9" name="test9">Label voor checkbox test9</label>
+
+    <!-- Geef het 5de li element in de lijst een kleur -->
+    <p>Geef het 5de li element in de lijst een kleur</p>
+    <ul id="test10">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+
+    <!-- Geef het elk oneven li element in de lijst een kleur -->
+    <p>Geef het elk oneven li element in de lijst een kleur</p>
+    <ul id="test11">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+
+    <!-- Geef elk even li element in de lijst een kleur -->
+    <p>Geef elk even li element in de lijst een kleur</p>
+    <ul id="test12">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+
+    <!-- Pseudo elementen -->
+    <h1>Pseudo elementen</h1>
+
+    <!-- zet de tekst van het label naar 👌 via CSS als de checkbox is aangekruist -->
+    <input type="checkbox" name="test13" id="test13" checked>
+    <label for="test13" name="test13"></label>
+
+    <!-- zet de eerste letter van de paragraaf groot -->
+    <p id="test14">De eerste letter van deze zin is groot</p>
+
+    <!-- kleuren -->
+    <p id="test15">rgb(255, 255, 255)</p>
+
+    <p id="test16">rgba(255, 255, 255, 1)</p>
+
+    <p id="test17">hsl(255, 100%, 100%)</p>
+
+    <p id="test18">#ffffffff</p>
+
+    <!-- gradient -->
+    <div id="test19"></div>
+
+    <!-- background image -->
+    <div id="test20"></div>
+
+</body>
+</html>
