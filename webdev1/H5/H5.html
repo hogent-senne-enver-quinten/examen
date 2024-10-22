@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5</title>
+    <link rel="stylesheet" href="cssh5.css">
+    <!-- dit is het eerste voorbeeld van hoe je een font importeerd in html -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>CSS cascade and inheritance</h1>
+    <code>De body gebruikt een font van google fonts genaamd "Roboto"</code>
+
+    <!-- Een test pargraaf om te zien wat voorrang op wat krijgt in CSS -->
+    <p>De font-size is 1.5em, de font-style is normal, de color is white en de background-color is red</p>
+
+    <!-- voorbeeld met voorrang in een tabel waarbij alle elementen met de klasse spec-living een rode kleur moeten krijgen -->
+    <p style="background-color: white; color: black;">In de onderstaande tabel moeten alle elementen met de klasse "spec-living" een rode tekst krijgen zonder het gebruik van !important die forceerd van een attribuut voorrang te geven.</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Specification</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://html.spec.whatwg.org/multipage/" hreflang="en" lang="en" class="external"
+                title="The 'HTML Living Standard' specification" rel=" noopener">HTML Living Standard</a>
+            </td>
+            <td class="spec-living">Living Standard</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://drafts.csswg.org/selectors-4/" hreflang="en" lang="en" class="external"
+                title="The 'Selectors Level&nbsp;4' specification" rel=" noopener">Selectors Level&nbsp;4</a>
+            </td>
+            <td>Working Draft</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.w3.org/TR/html52/" hreflang="en" lang="en" class="external"
+                title="The 'HTML5' specification" rel=" noopener">HTML5</a>
+            </td>
+            <td>Recommendation</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://fullscreen.spec.whatwg.org/" hreflang="en" lang="en" class="external"
+                title="The 'Fullscreen API' specification" rel=" noopener">Fullscreen API</a>
+            </td>
+            <td class="spec-living">Living Standard</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://drafts.csswg.org/css-ui-3/" hreflang="en" lang="en" class="external"
+                title="The 'CSS Basic User Interface Module Level&nbsp;3' specification" rel=" noopener">CSS Basic User
+                Interface Module Level&nbsp;3</a>
+            </td>
+            <td>Recommendation</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://drafts.csswg.org/selectors-3/" hreflang="en" lang="en" class="external"
+                title="The 'Selectors Level&nbsp;3' specification" rel=" noopener">Selectors Level&nbsp;3</a>
+            </td>
+            <td>Recommendation</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.w3.org/TR/CSS2/" hreflang="en" lang="en" class="external"
+                title="The 'CSS Level&nbsp;2 (Revision&nbsp;1)' specification" rel=" noopener">CSS Level&nbsp;2
+                (Revision&nbsp;1)</a>
+            </td>
+            <td>Recommendation</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.w3.org/TR/CSS1/" hreflang="en" lang="en" class="external"
+                title="The 'CSS Level&nbsp;1' specification" rel=" noopener">CSS Level&nbsp;1</a>
+            </td>
+            <td>Recommendation</td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

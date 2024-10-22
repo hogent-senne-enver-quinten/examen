@@ -1,0 +1,44 @@
+/* fonts */
+/* dit is het tweede voorbeeld van hoe je een font importeerd in css */
+/* Roboto: https://fonts.google.com/selection/embed */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* voorrang van stijlen uitgetest met een paragraaf */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+body > p {
+    background-color: red;
+    font-style: italic;
+}
+
+p {
+    background-color: green;
+    color:orange;
+}
+
+h1 + p {
+    color: white;
+    font-style: normal;
+}
+
+/* voorbeeld met voorrang in een tabel waarbij alle elementen met de klasse spec-living een rode kleur moeten krijgen */
+
+tbody tr:nth-child(even) td {
+    background-color: lightcyan;
+    color:darkblue;
+    
+  }
+  
+table, td, th {
+    border: 1px solid #a4a4a4;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+/* maakt .spec-living met .spec-living.spec-living een hoger prioriteit  */
+tr .spec-living.spec-living {
+    color: red;
+}
