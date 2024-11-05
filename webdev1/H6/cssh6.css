@@ -1,0 +1,161 @@
+/* Alle elementen in html stijlen */
+/* Het is een best practiceom steeds voor alle elementen box-sizingin te stellen op border-box. */
+html {
+    box-sizing: border-box;
+
+    /* Stel de regelhoogte voor de webpagina in op 1,3. */
+    line-height: 1.3;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+/* het li element met de klasse coming-soon is verborgen */
+li.display-none {
+    display: none; /* verbergt een element */
+}
+
+li.visibility-hidden {
+    visibility: hidden; /* verbergt het element, maar behoudt de ruimte die het element inneemt in */
+}
+
+/* In deze onderstaande div element is de margin 20px, de border 10px, de padding 10px, de width 300px en de height 400px */
+#boxtest {
+    margin: 20px;
+    border: 10px solid black;
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+}
+
+
+/* in dit onderstaande div element wordt padding toegepast */
+#padding-div-test {
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    
+    /* of */
+    
+    padding: 10px 25px 10px 5px;
+
+    border: 1px solid black; /* om de div te zien */
+}
+
+/* in dit onderstaande strong inline element wordt padding toegepast */
+/* let op padding-top en padding-bottom worden niet toegepast omdat dit in inline element is */
+#padding-strong-test
+{
+    padding: 20px;
+}
+
+#horizontaal-centreren-h1 {
+    /* Vergeet niet dat de breedte van het element moet worden ingesteld om het horizontaal te centreren */
+    /* In dit geval is de breedte van het element maximaal de breedte van de inhoud */
+    width: max-content; 
+    
+    /* top en bottomkrijgen waarde 0, leften right krijgen de waarde auto.
+	 waardoor dit element horizontaal gecentreerd wordt.*/
+    margin: 0 auto;
+}
+
+#horizontaal-centreren-p {
+    text-align: center; /* center de tekst in het element */
+}
+
+/* In dit voorbeeld is de scherm breedte 800px en de hoogte 600px
+   Let wel op in CSS wordt alleen de laatste waarden toegepast 
+   in dit geval padding-top: 1rem; */
+#soorten-waarden-div {
+	padding-top: 50px; /* 50 pixels breedte */
+	padding-top: 10%; /* 10% van de breedte: 80px */
+	padding-top: 1em; /* 16px */
+	padding-top: 1rem; /* 16px */
+
+    border: 1px solid black; /* om de div te zien */
+}
+
+#border-div {
+    border: 1px solid #000; /* 3 waarde in één combineren */
+    /*       ^      ^    ^
+                dikte  stijl kleur
+    */
+        
+    /* of afzonderlijk instellen */
+    border-top-width: 1px; /* (px, %, em, rem, thin, medium, thick)*/
+    border-top-style: solid; /* Een border kan één van deze stijlen hebben (none, hidden, dotted, dashed, solid, double) */
+    border-top-color: #000; /* (een kleurwaarde of transparent) */
+
+    margin: 100px; /* margin met elke kant 100px */
+}
+
+/* Je kunt bij een width en height zeggen dat iets minstens
+een bepaalde lengte moet hebben en maximaal zo groot mag zijn */
+/* de breedte wordt dus grooter naamate de inhoud bv tekst groter wordt */
+#min-max-div {
+	/* gebruik width: 200px; Als je gewoon width zet dat moet de div altijd 200px groot zijn */
+	
+	min-width: 400px; /* Moet minimaal 400px groot zijn */
+	max-width: 600px; /* Mag maximaal 600px groot zijn*/
+}
+
+#overflow-div {
+    width: 200px;
+    height: 200px;
+    overflow: scroll; /* Als de inhoud groter is dan de div dan komt er een scrollbar */
+}
+
+#calc-p {
+    width: calc(100% - 30px); /* let op tussen beide waardes moet een spacie zitten */
+}
+
+#box-sizing-p {
+    /*
+    - content-box: De ingestelde width en height hebben enkel betrekking op de content.
+    - border-box: De ingestelde width en height hebben betrekking op de content + de padding + de border.
+    */
+    box-sizing: border-box;
+}
+
+#ronde-randen-div {
+    border: 5px solid #ee3e80;
+    padding: 20px;
+    width: 275px;
+    border-radius: 20px; /* ronde randen van 20px */
+}
+
+#box-shadow-div {
+    /*
+    - Horizontale offset
+    - Verticale offset
+    - Blur afstand
+    - Spread van schaduw
+    - Kleur
+    */
+    box-shadow: 5px 5px 5px 5px #777777;
+}
+
+#text-shadow-p {
+    /*
+    - Horizontale offset
+    - Verticale offset
+    - Blur afstand (optioneel)
+    - Kleur
+    */
+    text-shadow: 5px 5px 5px #777777;
+}
+
+#writing-mode-p {
+    writing-mode: vertical-rl; /* verticale tekst */
+}
+
+#cursor-p {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    cursor: pointer; /* verander de cursor in een handje */
+}
