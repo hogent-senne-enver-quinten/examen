@@ -1,0 +1,290 @@
+/* toon de p elementen in de flex boxes */
+div p {
+    color: white;
+    margin: 0;
+    width: 50px;
+    text-align: center;
+}
+
+div p:first-of-type {
+    background-color: orange;
+}
+
+div p:nth-of-type(2) {
+    background-color: green;
+}
+
+div p:last-of-type {
+    background-color: blue;
+}
+
+/* Normale-box vs flexbox */
+.normale-box, .flex-box {
+    border: 2px solid black;
+}
+
+.flex-box {
+    /* flexbox zorgt ervoor dat je de positie en witruimte van elk element
+	   kunt instellen */
+    display: block flex;
+    /* of */
+    display: flex;
+}
+
+/* Flex direction */
+.flex-direction-row {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row; /* standaard bij display: flex; */
+}
+
+.flex-direction-column {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-direction-row-reverse {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.flex-direction-column-reverse {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Flex gap */
+/* Gap bepaald de heoveelheid witruimte tussen elementen in de flexbox */
+.flex-gap {
+    border: 2px solid black;
+    display: flex;
+	gap: 10px; /* kan px, em, rem, %, ... zijn */
+}
+
+/* Flex wrap */
+/* flex-wrap bepaald wat er met de elementen moeten gebeuren als er te weinig
+   ruimte is */
+.flex-wrap-no-wrap {
+    border: 2px solid black;
+    display: flex;
+    width: 8rem;
+    gap: 4rem;
+    flex-wrap: nowrap; /* standaard */ /* verberg de elementen die uitsteken */
+}
+
+.flex-wrap-wrap {
+    border: 2px solid black;
+    display: flex;
+    width: 8rem;
+    gap: 4rem;
+    flex-wrap: wrap; /* breng de elementen naar de volgende row of column */
+}
+
+.flex-wrap-wrap-reverse {
+    border: 2px solid black;
+    display: flex;
+    width: 8rem;
+    gap: 4rem;
+    flex-wrap: wrap-reverse; /* breng de elementen naar de vorige row of column */
+}
+
+/* Justify content */
+/* justify-content bepaald waar in de lengte en hoeveel witruimte elk element krijgt */
+.justify-content-flex-start {
+    border: 2px solid black;
+    display: flex;
+    justify-content: flex-start;  /* standaard */ /* laat de elementen van links beginnen */
+}
+
+.justify-content-flex-end {
+    border: 2px solid black;
+    display: flex;
+    justify-content: flex-end; /* laat de elementen van rechts beginnen */
+}
+
+.justify-content-center {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center; /* laat de elementen van het midden beginnen */
+}
+
+.justify-content-space-around {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around; /* rond elk element evenveel witruimte */
+}
+
+.justify-content-space-between {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between; /* tussen elk element evenveel witruimte */
+}
+
+.justify-content-space-evenly {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly; /* voor, na en tussen elk element evenveel witruimte */
+}
+
+/* Align items */
+/* align-items bepaald de hoogte en hoeveel witruimte elk element krijgt */
+.align-items-stretch {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+	height: 50vh;
+    align-items: stretch; /* standaard */ /* elk element heeft de volledige grootte van de flexbox */
+}
+
+.align-items-flex-start {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    height: 50vh;
+    align-items: flex-start; /* elk element begint bovenaan */
+}
+
+.align-items-flex-end {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    height: 50vh;
+    align-items: flex-end; /* elk element begint onderaan */
+}
+
+.align-items-center {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    height: 50vh;
+    align-items: center; /* elk element begint in het midden */
+}
+
+.align-items-baseline {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    height: 50vh;
+    align-items: baseline; /* elk element begint in het midden volgens de onderkant van de tekst */
+}
+
+/* Align content */
+/* doet hetzelfde als align-items */
+
+/* Flex-grow en Flex-shrink */
+/* flex-growen flex-shrinkbepalen hoeveel een item mag 
+   groeien/verkleinen als er extra plaats is in de container */
+
+.flex-grow, .flex-shrink {
+    /* reset width van p element */
+    width: auto;
+}
+
+.flex-grow {
+    border: 2px solid black;
+    display: flex;
+}
+
+.flex-grow p:last-of-type {
+    flex-basis: 10px;
+    flex-grow: 2; /* standaard is 0 */ /* 0 = niet groeien, 0> = groei in verhouding met andere items */
+}
+
+.flex-shrink {
+    border: 2px solid black;
+    display: flex;
+}
+
+.flex-shrink p:last-of-type {
+    width: auto;
+    flex-shrink: 2; /* standaard is 1 */ /* 0 = niet verkleinen, 0> = verkleinen in verhouding met andere items */
+}
+
+/* Flex-basis */
+/* flex-basis bepaalt de initiële grootte van een 
+   item voordat flex-growen flex-shrinkworden toegepast,
+   heeft ook voorang op width van een element */
+   
+.flex-basis {
+    border: 2px solid black;
+    display: flex;;
+}
+    
+.flex-basis p {
+    /* reset width van p element */
+    width: auto;
+    flex-basis: 70px; /* standaard is auto */
+}
+
+/* Flex-shorthand */
+/* De flexproperty laat je toe flex-grow, flex-shrinken flex-basis in een keer 
+   te definiëren */
+.flex-shorthand {
+    border: 2px solid black;
+    display: flex;
+}
+
+.flex-shorthand p {
+    /* reset width van p element */
+    width: auto;
+
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 50em;
+    /* vervangen door */
+    flex: 2 1 50em;
+}
+
+/* absolute-flex */
+.absolute-flex {
+    border: 2px solid black;
+    display: flex;
+}
+
+.absolute-flex p {
+    /* reset width van p element */
+    width: auto;
+    
+    /* Alle items krijgen dezelfde grootte */
+    flex: 1 1 0;
+}
+
+/* Relatieve flex */
+.relatieve-flex {
+    border: 2px solid black;
+    display: flex;
+}
+
+.relatieve-flex p {
+    /* reset width van p element */    
+    width: auto;
+    /* Alle items krijgen de grootte bepaald door max-content */
+    flex: 0 1 max-content;
+}
+
+/* Flexbox margin: auto */
+.flex-margin-auto-right {
+    border: 2px solid black;
+    display: flex;
+}
+
+.flex-margin-auto-right p:first-of-type {    
+    margin-inline-end: auto;
+	/* of */
+	margin-right: auto;
+}
+
+.flex-margin-auto-left {
+    border: 2px solid black;
+    display: flex;
+}
+
+.flex-margin-auto-left p:last-of-type {
+    margin-inline-start: auto;
+    /* of */
+    margin-left: auto;
+}
