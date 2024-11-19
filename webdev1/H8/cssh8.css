@@ -1,0 +1,337 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Grid met lijnnummers */
+.box {
+    border: 1px solid #000;
+    background-color: orange;
+    padding: 1em;
+}
+
+.grid-met-lijnnummers {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+}
+
+.grid-met-lijnnummers #box2 {
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+.grid-met-lijnnummers #box3 {
+    grid-column: 3/5;
+    grid-row: 3;
+}
+
+/* Grid met fr */
+.fr-box {
+    border: 1px solid #000;
+    background-color: orange;
+    padding: 1em;
+}
+
+.grid-met-fr-1 {
+    display: block grid;
+    /* We hebben 3 items waarvan 2 1fr omdat deze 2 1fr zijn tellen ze mee als 1 item
+	   => 1 + 1 + 1 => 3 items 
+	   We krijgen dan eerst een kolom van 500px dan een een kolom
+	   van 1/3 van van resterende ruimte en dan nog eens 1/3 
+	   kolom van de resterende ruimte maar omdat dit de laatste kolom is 
+	   krijgt het alle resterende ruimte dus 2/3 van de beschikbare resterende ruimte. */
+    grid-template-columns: 500px 1fr 1fr;
+}
+
+.grid-met-fr-2 {
+    display: block grid;
+    /* We hebben 3 items waarvan 2 1fr en 1 2fr is omdat deze 2 1fr zijn tellen ze mee als 1 item
+	   en de 2fr telt als 2 items => 2 + 1 + 1 => 4 items
+	   de eerste kolom krijgt dus een ruimte van 2/4 van de beschikbare ruimte.
+	   en de 2 1fr krijgen dus elk 1/4 van de beschikbare ruimte. */
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.grid-met-fr-3 {
+    display: block grid;
+
+    /* We hebben 3 1fr items omdat deze 3 1fr zijn tellen ze mee als 1 item
+	   => 1 + 1 + 1 => 3 items
+	   de 3 1fr kijgen dus elke 1/3 van de beschikbare ruimte. */
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Grid-auto-rows */
+
+.grid-auto-rows {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    /* De hoogte van de eerste rij stellen we in op 50px */
+    grid-template-rows: 50px;
+    /* Andere rijen krijgen een hoogte van 150px */
+    grid-auto-rows: 150px;
+    /* standaard op auto */
+    grid-auto-columns: auto;
+    /* standaard op auto */
+}
+
+/* Grid minmax() */
+
+.grid-minmax {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 50px;
+    /* De rijen zullen nooit kleiner worden dan 150px
+	   en worden altijd aan hun hoogte door auto */
+    grid-auto-rows: minmax(200px, auto);
+}
+
+/* Grid span */
+.grid-span {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 50px;
+}
+
+.grid-span #box2 {
+    /* Je kan ook span gebruiken om een item over meerdere kolommen te laten lopen */
+    /* in dit geval loopt box2 over 2 kolommen */
+    grid-column: span 2;
+    grid-row: 2;
+}
+
+.grid-span #box3 {
+    /* In dit geval loopt box3 over 3 kolommen */
+    grid-column: span 3;
+    grid-row: 3;
+}
+
+/* Grid gap */
+.grid-gap {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+
+    /* Met gap voeg je witruimte toe aan de grid items */
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    /* of */
+    gap: 20px;
+    /* stel row en gap allebei in */
+}
+
+/* Align-self */
+.align-self {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: 50px;
+    grid-auto-rows: 150px;
+}
+
+.align-self .box {
+    height: auto;
+}
+
+.align-self #box2 {
+    /* Met align-self kan je de verticale positie van een item aanpassen */
+    align-self: start;
+}
+
+.align-self #box3 {
+    align-self: end;
+}
+
+.align-self #box4 {
+    align-self: center;
+}
+
+/* Justify-self */
+.justify-self {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: 50px;
+}
+
+.justify-self #box2 {
+    /* Met justify-self kan je de horizontale positie van een item aanpassen */
+    justify-self: start;
+}
+
+.justify-self #box3 {
+    justify-self: end;
+}
+
+.justify-self #box4 {
+    justify-self: center;
+}
+
+/* align-justify-center */
+
+.align-justify-center {
+    display: grid;
+
+    border: 1px solid #000;
+    background-color: orange;
+    padding: 1em;
+    width: 300px;
+
+    text-align: center;
+
+    /* Met align-items kan je de verticale positie van de grid items aanpassen */
+    align-self: center;
+    justify-self: center;
+}
+
+/* Float */
+
+.float {
+    width: 150px;
+    float: right;
+}
+
+/* Position fixed */
+
+header {
+    /* De header scrolt met het venster */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #000;
+    padding: 1em;
+
+    /* De z-index bepaaldt op welke laag een element wordt getoond,
+     Een element op z-index 1 overlapt een element op z-index 0; 
+     z-index gaat van 0-N */
+
+    /* In dit geval hebben we dit nodig omdat anders het absolute element boven de header komt */
+    z-index: 1;
+}
+
+main {
+    margin-top: 200px;
+}
+
+/* Position absolute */
+
+.absolute {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    padding: 1em;
+}
+
+/* grid-row & grid-column */
+.grid-row-column {
+    display: grid;
+    gap: 0.2rem;
+    width: fit-content;
+}
+
+.grid-row-column div {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    color: darkblue;
+    background-color: cyan;
+    border: 1px solid darkblue;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+}
+
+.grid-row-column #box1,
+.grid-row-column #box2,
+.grid-row-column #box3,
+.grid-row-column #box4,
+.grid-row-column #box5 {
+    grid-row: 2;
+}
+
+.grid-row-column #box1 {
+    grid-column: 1;
+}
+
+.grid-row-column #box2 {
+    grid-column: 2;
+}
+
+.grid-row-column #box3 {
+    grid-column: 3;
+}
+
+.grid-row-column #box4 {
+    grid-column: 4;
+}
+
+.grid-row-column #box5 {
+    grid-column: 5;
+}
+
+#box6,
+#box7,
+#box8 {
+    grid-column: 4;
+}
+
+/* grid-template-areas */
+
+.grid-template-areas {
+    display: block grid;
+    width: fit-content;
+    grid-template-areas:
+        ". l . ."
+        ". e . ."
+        ". a . ."
+        "g r i d"
+        ". n . .";
+}
+
+.grid-template-areas div {
+    font-size: 2rem;
+    background-color: greenyellow;
+    border: 2px solid darkcyan;
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Belangerijk
+     benoem alle variabelen die je
+     gebruikt in grid-template-areas */
+
+.grid-template-areas #box1 {
+    grid-area: l;
+}
+
+.grid-template-areas #box2 {
+    grid-area: e;
+}
+
+.grid-template-areas #box3 {
+    grid-area: a;
+}
+
+.grid-template-areas #box4 {
+    grid-area: r;
+}
+
+.grid-template-areas #box5 {
+    grid-area: n;
+}
+
+.grid-template-areas #box6 {
+    grid-area: g;
+}
+
+.grid-template-areas #box7 {
+    grid-area: i;
+}
+
+.grid-template-areas #box8 {
+    grid-area: d;
+}
