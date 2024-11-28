@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H9</title>
+    <link rel="stylesheet" href="cssh9.css">
+</head>
+
+<body>
+    <nav>
+        <label for="menu-checkbox">
+            <img id="hamburger-icon" src="img/hamburger_icon.svg" alt="hamburger_icon">
+        </label>
+        <input type="checkbox" id="menu-checkbox">
+        <ul>
+            <li><a class="active">Hoofdstuk 9</a></li>
+            <li><a href="">test 1</a></li>
+            <li><a href="">test 2</a></li>
+            <li><a href="">test 3</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hamburger menu -->
+        <h1>Hamburger menu</h1>
+        <p>Zoals als je ziet heeft deze pagina een header/nav en deze wordt ook automatisch aangepast bij een scherm die
+            een breedte heeft die kleiner is dan 576px</p>
+
+        <!-- Vector VS Bitmap -->
+        <h1>Vector VS Bitmap</h1>
+        <p>Een vector als svg wordt in tegenstelling tot een bitmap afbeelding als png in codetaal geschreven waardoor
+            je het kunt vergroten zonder kwaliteitsverlies</p>
+        <img src="img/H9_vec_bit.png" alt="Vector VS Bitmap">
+
+        <!-- Pixel Ratio -->
+        <h1>Pixel Ratio</h1>
+        <p>De pixel ratio is hoeveel pixels worden gebruikt voor bevoorbeeld één CSS pixel te weergeven.</p>
+        <img src="img/pixel_ratio.png" alt="Pixel Ratio">
+
+        <!-- Resolution switching -->
+        <h1>Resolution switching</h1>
+        <p>Resolution switching is het veranderen van de resolutie van een afbeelding bij een bepaalde schermgrootte</p>
+        <p>In dit geval gebruiken we het img element</p>
+        
+        <!--
+        In het voorbeeld hieronder voegen we meerdere groottes van dezelfde afbeelding toe aan srcset,
+        we geven bij srcset telkens ook de breedte van de afbeelding.
+
+        Bij sizes zetten we bij welke media query welke breedte de afbeelding moet krijgen,
+        de laatste breedte is de default lengte van de afbeelding.
+        -->
+        <img srcset="img/bmw-1024.jpg 1024w, img/bmw-640.jpg 640w, img/bmw-320.jpg 320w" sizes="(min-width: 36em) 33.3vw, 100vw" src="small.jpg“
+        alt="bmw" />
+        <!--
+        sizes="[media query] [length],
+        [media query] [length],
+        etc…,
+        [default length]"
+        -->
+
+        <!-- Picture -->
+        <h1>Picture</h1>
+        <p>Picture is een element dat je kunt gebruiken om verschillende afbeeldingen te tonen bij verschillende schermgroottes</p>
+
+        <!--
+        Bij een picture element voegen we standaard een img element toe met de afbeelding, deze wordt standaard weergeven.
+
+        Ook voegen we eventueel source elementen toe met een srcset (pad van afbeelding) en media (media query)
+        -->
+        <picture>
+            <source srcset="img/bmw-1024.jpg" media="(min-width: 1200px)">
+            <source srcset="img/bmw-640.jpg" media="(min-width: 700px)">
+            <img src="img/bmw-1024.jpg"
+            alt=“bmw">
+       </picture>
+       <!--
+       Je kan ook vermelden dat een source of img element een andere pixel ratio heeft, in dit geval 2x. 
+       <source srcset="images/runner-wide-2x.jpg 2x, images/runner-wide.jpg" media="(min-width: 1200px)">
+       -->
+    </main>
+
+</body>
+
+</html>
