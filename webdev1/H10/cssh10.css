@@ -1,0 +1,143 @@
+body {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+main {
+    padding-left: 14px;
+    padding-right: 14px;
+    max-width: 640px;
+    display: grid;
+    justify-self: center;
+}
+
+main * {
+    width: 100%;
+}
+
+/* transition */
+
+.transition {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+
+	/* dit zijn de transition properties met hun standaardwaarden */
+	transition-property: all;
+	transition-duration: 0s;
+	transition-timing-function: ease;
+	transition-delay: 0s;
+
+    /* via shorthand transition */
+
+    /* verander alle properties over 1 seconde */
+    transition: all 1s; 
+
+    /* of */
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.transition:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    width: 150px;
+    height: 60px;
+}
+
+/* CSS 2D transform */
+.transform {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.transform:nth-of-type(2) {
+    transform: translateX(300px) rotate(30deg);
+}
+
+/* Animation */
+
+.vinyl {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+
+    /* dit zijn de animation properties met hun standaardwaarden */
+    animation-name: none;
+    animation-duration: 0s;
+    animation-delay: 0s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-direction: normal;
+    animation-play-state: running;
+
+    /* via animation shorthand */
+
+    /* we gebruiken keyframe rotate360
+    en dat de animatie linear is
+    en dat deze infinite opnieuw afspeelt  */
+    animation: rotate360 2s linear infinite;
+
+    /* of */
+
+    /* we gebruiken de keyframe rotate360 */
+    animation-name: rotate360;
+    /* de animatie duurt 2 seconden */
+    animation-duration: 2s;
+    /* de animatie verloopt lineair */
+    animation-timing-function: linear;
+    /* speelt oneindig keer opnieuw af */
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Variabelen */
+
+/* globale variabelen */
+
+/* globale variabelen schrijf je altijd in de :root selector
+   variablen schijf je ook altijd met -- vooraan */
+:root {
+    --primary-color: #000000;
+}
+
+/* je kan dan ergens anders de variabelen gebruiken met var() */
+p {
+    color: var(--primary-color);
+}
+
+/* lokale variabelen */
+
+/* lokale variablen werken hetzelfde als globale variabelen
+   maar je kan deze alleen gebruiken binnen het element */
+p {
+    --primary-color: rgb(10, 10, 10);
+
+    color: var(--primary-color);
+}
